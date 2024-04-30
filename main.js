@@ -210,10 +210,10 @@ const shareStory = () => {
   const cuentoId = document.querySelector('.cuento-id-message').textContent;
 
   // Obtener el enlace de la página
-  const pageURL = window.location.href;
+  const pageURL = "https://cristian-000.github.io/cuentos-web/";
 
   // Construir el texto completo que se compartirá
-  const shareText = `\n${storyText}\n\n\n${cuentoId}\nPuedes generar más cuentos en: ${pageURL}`;
+  const shareText = `\n${storyText}\n\n\n${cuentoId}\nGenera y comparte más cuentos en: ${pageURL}`;
 
   // Verificar si el navegador admite la API de share
   if (navigator.share) {
