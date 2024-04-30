@@ -198,4 +198,37 @@ document.addEventListener("DOMContentLoaded", () => {
   searchButton.addEventListener("click", handleSearch);
 
   fetchData();
+  
+  // Función para compartir el cuento en formato de texto
+const shareStory = () => {
+  // Recopilar el contenido del cuento
+  const storyText = Array.from(storyContainer.querySelectorAll('.section-paragraph'))
+                      .map(paragraph => paragraph.textContent)
+                      .join('\n');
+
+  // Obtener el ID del cuento
+  const cuentoId = document.querySelector('.cuento-id-message').textContent;
+
+  // Obtener el enlace de la página
+  const pageURL = window.location.href;
+
+  // Construir el texto completo que se compartirá
+  const shareText = `\n${storyText}\n\n\n${cuentoId}\nPuedes generar más cuentos en: ${pageURL}`;
+
+  // Verificar si el navegador admite la API de share
+  if (navigator.share) {
+      navigator.share({
+          title: 'Compartir Cuento',
+          text: shareText,
+      })
+      .then(() => console.log('Contenido compartido con éxito'))
+      .catch((error) => console.error('Error al compartir contenido:', error));
+  } else {
+      // Si el navegador no admite la API de share, proporcionar una alternativa
+      alert('Tu navegador no admite la función de compartir.');
+  }
+};
+// Agregar evento de clic al botón de compartir
+const shareButton = document.getElementById("share-button");
+shareButton.addEventListener("click", shareStory);
 });
