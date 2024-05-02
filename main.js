@@ -131,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Nueva función para manejar la búsqueda desde la barra
   const handleSearch = () => {
+     resetSearchFeedback();
     const searchInput = document.getElementById("search-input");
     const storyId = searchInput.value.trim();
 
