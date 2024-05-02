@@ -72,20 +72,100 @@ document.addEventListener("DOMContentLoaded", () => {
     return categories[randomIndex].categoria;
   };
 
-  const renderStory = () => {
+
+  /* */
+  const createChangeSectionButton = (sectionId) => {
+    const button = document.createElement("button");
+    button.textContent = "Cambiar sección";
+    button.classList.add("change-section-button");
+    button.addEventListener("click", () => {
+        changeSection(sectionId);
+    });
+    return button;
+};
+
+const renderStory = () => {
     clearStoryContainer();
     const currentCategory = getCategoryFromURL() || 'Aleatorio';
     categoryHeading.textContent = `Categoría ${currentCategory}`;
 
     storySections.forEach((seccion, index) => {
-      const paragraph = createParagraph(seccion.seccion, seccion.visible);
-      storyContainer.appendChild(paragraph);
+        const paragraph = createParagraph(seccion.seccion, seccion.visible);
+        const changeSectionBtn = createChangeSectionButton(seccion.id); // Crear botón de cambio
+        paragraph.appendChild(changeSectionBtn); // Agregar botón de cambio al párrafo
+        storyContainer.appendChild(paragraph);
     });
 
     const cuentoId = generateUniqueId(currentCategory, storySections);
     showCuentoId(cuentoId);
-  };
+};
 
+const changeSection = (sectionId) => {
+  // Encontrar la sección actual en el array storySections
+  const sectionToChangeIndex = storySections.findIndex(section => section.id === sectionId);
+  if (sectionToChangeIndex !== -1) {
+      // Sección encontrada
+      
+      // Seleccionar una nueva sección de la misma categoría y tipo
+      const newSection = findRandomSectionOfSameCategoryAndType(storySections[sectionToChangeIndex].categoria, storySections[sectionToChangeIndex].tipo);
+      if (newSection) {
+          // Nueva sección encontrada
+          
+          // Reemplazar la sección antigua con la nueva
+          storySections[sectionToChangeIndex] = newSection;
+          
+          // Renderizar el cuento actualizado
+          renderStory();
+          
+          // Mostrar mensaje de éxito
+          const successMessage = document.getElementById("success-message");
+          successMessage.textContent = `Sección ${newSection.tipo} cambiada exitosamente.`;
+          successMessage.style.display = "block";
+          
+          // Ocultar el mensaje después de unos segundos
+          setTimeout(() => {
+              successMessage.textContent = "";
+              successMessage.style.display = "none";
+          }, 3000); // 3000 milisegundos = 3 segundos
+      } else {
+          // No se encontró una nueva sección
+          alert("No se encontró una nueva sección de la misma categoría y tipo.");
+      }
+  } else {
+      // No se encontró la sección
+      alert("No se encontró la sección con el ID especificado.");
+  }
+};
+
+// Función para encontrar una sección aleatoria de la misma categoría y tipo
+const findRandomSectionOfSameCategoryAndType = (categoria, tipo) => {
+  const categoriaData = data.cuentos.find(cuento => cuento.categoria === categoria);
+  if (categoriaData) {
+      const tipoData = categoriaData.tipos.find(t => t.tipo === tipo);
+      if (tipoData && tipoData.secciones.length > 0) {
+          // Encontrar una sección aleatoria diferente a la actual
+          let newSection;
+          do {
+              newSection = tipoData.secciones[Math.floor(Math.random() * tipoData.secciones.length)];
+          } while (storySections.some(section => section.id === newSection.id));
+          return {
+              categoria: categoria,
+              tipo: tipo,
+              seccion: newSection.contenido,
+              id: newSection.id,
+              visible: false
+          };
+      }
+  }
+  return null;
+};
+// Agregar el evento de cambio de sección cuando se carga el cuento
+document.addEventListener("DOMContentLoaded", () => {
+    fetchData();
+});
+
+
+  /* */
   const clearStoryContainer = () => {
     const paragraphs = document.querySelectorAll('.section-paragraph');
     paragraphs.forEach(paragraph => {
