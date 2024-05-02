@@ -2,6 +2,7 @@
     background-color: var(--primary-color);
     position: sticky;
     top: 0;
+    border-bottom: 1px solid var(--secondary-color); /* Agregado */
   }
   
   .nav-list {
@@ -9,11 +10,16 @@
     margin: 0;
     padding: 0;
     text-align: center;
+   
   }
   
   .nav-list li {
+    
     display: inline-block;
     position: relative; /* Agregado */
+    margin-right: 10px; /* Ajusta el espaciado entre elementos según sea necesario */
+    padding-right: 10px; /* Ajusta el espacio interno según sea necesario */
+    border-right: 1px solid var(--secondary-color); /* Añade una línea de separación entre los elementos */
   }
   .nav-list li a {
     display: inline-block;
@@ -63,4 +69,9 @@
 
 .dropdown-content a:hover {
   background-color: var(--dropdown-link-hover-color);
+}
+.nav-list li:last-child {
+  margin-right: 0px; 
+  padding-right: 0px;
+  border-right: none; /* Elimina el borde derecho del último elemento para evitar una separación adicional */
 }
