@@ -7,46 +7,64 @@
   <title>Cuentos App</title>
   <link rel="stylesheet" href="story.css">
   <link rel="stylesheet" href="navbar.css">
+ <!-- Agrega el enlace al CSS de Font Awesome -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
 </head>
 
 <body>
   <nav class="navbar">
     <ul class="nav-list">
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/about.html">Sobre nosotros</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Categorías</a>
-          <div class="dropdown-content">
-              <a href="story.html?categoria=Aventura">Aventura</a>
-              <a href="story.html?categoria=Fantasía">Fantasía</a>
-          </div>
+      <li><a href="/index.html">Inicio</a></li>
+      <li><a href="/about.html">Sobre nosotros</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropbtn">Categorías</a>
+        <div class="dropdown-content">
+          <a href="story.html?categoria=Aventura">Aventura</a>
+          <a href="story.html?categoria=Fantasía">Fantasía</a>
+        </div>
       </li>
     </ul>
-</nav>
-  <div class="story-container">
-    <h2 id="category-heading" class="category-heading">Categoría</h2>
-    <div id="story-container">
-    </div>
-    <div id="botones-varios">
-      <div id="button-container">
+  </nav>
 
-        <button id="go-back-button">Inicio</button>
-        <button id="reload-button">Generar Cuento</button>
-        <button id="share-button">Compartir</button>
+  <h2 id="category-heading" class="category-heading">Categoría</h2>
 
-      </div>
-      <div class="search-bar-container">
-        <input type="text" id="search-input" placeholder="Buscar por ID">
-        <button id="search-button">Buscar</button>
-        
+  <div class="container">
 
-      </div>
-      <div id="search-feedback" style="display: none;"></div>
+    <div class="story-container">
+      <div id="story-container"></div>
+      
     </div>
 
+    <div class="button-section" id="button-section">
+     
+    </div>
 
   </div>
+
+  <div id="success-message"></div>
+  
+
+  <div id="botones-varios">
+   
+    <div id="button-containers">
+
+      <button id="go-back-button"><i class="fas fa-arrow-left"></i> Inicio</button>
+      <button id="reload-button"><i class="fas fa-sync-alt"></i> Generar Cuento</button>
+      <button id="share-button"><i class="fas fa-share"></i> Compartir</button>
+
+    </div>
+    <div class="search-bar-container">
+      <input type="text" id="search-input" placeholder="Buscar por ID">
+      <button id="search-button"><i class="fas fa-search"></i> Buscar</button>
+
+
+    </div>
+    <div id="search-feedback" style="display: none;"></div>
+  </div>
+
+
+
 
   <script src="main.js"></script>
 </body>

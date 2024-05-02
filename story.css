@@ -9,6 +9,7 @@
   }
   
   body {
+    align-items: center;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     line-height: 1.6;
@@ -16,7 +17,9 @@
     padding: 0;
     font-weight: 400;
   }
-  
+  h2, #success-message{
+   text-align: center;
+  }
   .story-container {
     max-width: 800px;
     margin: 0 auto;
@@ -33,21 +36,21 @@
     margin-bottom: 20px;
   }
   
-  #button-container {
+  #button-containers {
     margin-top: 20px;
   }
   
-  #button-container button {
+  #button-containers button {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
     color: var(--secondary-color);
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.2s ease;
   }
   
-  #button-container button:hover {
+  #button-containers button:hover {
     background-color: var( --dropdown-bg-color);
   }
   
@@ -82,7 +85,7 @@
   }
   
   #botones-varios {
-    position: fixed;
+
     bottom: 0;
     width: 100%;
     padding: 20px;
@@ -90,25 +93,53 @@
   }
   
 
-  .button-container {
+  .button-containers {
     position: fixed;
     left: 20px; /* Ajusta el valor según tu preferencia para la distancia desde el borde izquierdo */
     bottom: 20px; /* Ajusta el valor según tu preferencia para la distancia desde el borde inferior */
 }
 
-.change-section-button {
-    display: block;
-    margin-bottom: 10px; /* Ajusta el valor según tu preferencia para la separación entre botones */
-    padding: 8px 16px;
-    font-size: 14px;
-    background-color: #4CAF50; /* Color de fondo del botón */
-    color: white; /* Color del texto del botón */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+
+
+
+.container {
+  display: flex;
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  justify-content: space-between; /* Espacia los elementos de forma equitativa */
+  max-width: 800px;
+  min-height: 250px;
+  margin: 0 auto;
+  padding: 5px;
 }
 
-.change-section-button:hover {
-    background-color: #45a049; /* Color de fondo del botón al pasar el cursor sobre él */
+.story-container {
+  flex: 1; /* La historia ocupará todo el espacio restante */
 }
+
+#button-section {
+  min-height: 250px;
+
+  margin-top: 50px; /* Espacio entre los botones */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Distribuye uniformemente los elementos */
+ 
+}
+
+.change-section-button {
+ 
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+
+.change-section-button:hover{
+  background-color: var( --dropdown-bg-color);
+}
+
