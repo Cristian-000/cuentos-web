@@ -48,11 +48,10 @@
   display: none;
   position: absolute;
   background-color: #f56e20de;
-  z-index: 1;
+  z-index: 3;
   top: 100%;
   left: 0;
   border-radius: 5px;
-
 }
 
 .dropdown:hover .dropdown-content {

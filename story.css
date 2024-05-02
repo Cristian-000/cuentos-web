@@ -97,7 +97,7 @@
     padding: 20px;
     padding-top: 5px;
     margin-top: 5px;
-    z-index: 1000;
+    z-index: 2;
     background-color: rgba(255, 255, 255, 0); /* Ajusta el color de fondo según sea necesario */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Agrega una sombra si deseas */
 }
@@ -112,13 +112,14 @@
 
 
 .container {
-  position: relative; /* Establece la posición relativa para que los botones se posicionen absolutamente con respecto a este contenedor */
+
   display: flex;
   align-items: center;
   max-width: 800px;
   min-height: 250px;
   margin: 0 auto;
   padding: 5px;
+  z-index: 1;
 }
 
 .story-container {
@@ -127,7 +128,7 @@
 
 .button-section {
 
-  min-height:300px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
