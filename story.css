@@ -111,10 +111,12 @@
 
 
 
+
+
 .container {
   display: flex;
-  align-items: flex-start; /* Alinea los elementos en la parte superior */
-  justify-content: space-between; /* Espacia los elementos de forma equitativa */
+  align-items: flex-start;
+  justify-content: space-between;
   max-width: 800px;
   min-height: 250px;
   margin: 0 auto;
@@ -122,22 +124,20 @@
 }
 
 .story-container {
-  flex: 1; /* La historia ocupará todo el espacio restante */
+  flex: 1;
 }
 
-#button-section {
-  min-height: 300px;
-
-  margin-top: 50px; /* Espacio entre los botones */
+.button-section {
+  min-height: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between; /* Distribuye uniformemente los elementos */
- 
+  align-items: flex-start; /* Cambiado de "center" a "flex-start" */
+  justify-content: space-between;
+padding-top: 40px;
+padding-bottom: 50px;
 }
 
 .change-section-button {
- 
   padding: 5px 10px;
   text-decoration: none;
   color: var(--secondary-color);
@@ -146,8 +146,6 @@
   transition: background-color 0.2s ease;
 }
 
-
-.change-section-button:hover{
-  background-color: var( --dropdown-bg-color);
+.change-section-button:hover {
+  background-color: var(--dropdown-bg-color);
 }
-
