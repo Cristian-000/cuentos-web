@@ -5,92 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cuentos App</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
+  <link rel="stylesheet" href="story.css">
+  <link rel="stylesheet" href="navbar.css">
 
-    .story-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .category-heading {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #45a049;
-    }
-
-    .section-paragraph {
-      margin-bottom: 20px;
-    }
-
-    #button-container {
-      margin-top: 20px;
-    }
-
-    #button-container button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    #button-container button:hover {
-      background-color: #0056b3;
-    }
-
-    .search-bar-container {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-    }
-
-    .search-bar-container input[type="text"] {
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      flex: 1;
-      max-width: 300px;
-      /* Ajusta este valor según tus preferencias */
-    }
-
-    .search-bar-container button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-
-    .search-bar-container button:hover {
-      background-color: #45a049;
-    }
-
-    #botones-varios {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      padding: 20px;
-      z-index: 1000;
-      /* Asegura que esté por encima de otros elementos */
-    }
-  </style>
 </head>
 
 <body>
+  <nav class="navbar">
+    <ul class="nav-list">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/about.html">Sobre nosotros</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Categorías</a>
+          <div class="dropdown-content">
+              <a href="story.html?categoria=Aventura">Aventura</a>
+              <a href="story.html?categoria=Fantasía">Fantasía</a>
+          </div>
+      </li>
+    </ul>
+</nav>
   <div class="story-container">
     <h2 id="category-heading" class="category-heading">Categoría</h2>
     <div id="story-container">
@@ -106,7 +39,10 @@
       <div class="search-bar-container">
         <input type="text" id="search-input" placeholder="Buscar por ID">
         <button id="search-button">Buscar</button>
+        
+
       </div>
+      <div id="search-feedback" style="display: none;"></div>
     </div>
 
 

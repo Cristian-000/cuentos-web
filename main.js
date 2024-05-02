@@ -161,7 +161,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const sections = findSectionsByIds(categoriaData, ids);
   
       if (!sections || sections.length === 0) {
-        console.error(`No se encontraron secciones con el ID: ${storyId}`);
+        // Mostrar un mensaje en el elemento search-feedback si no se encuentran resultados
+        const searchFeedback = document.getElementById('search-feedback');
+        searchFeedback.textContent = `No se encontraron secciones con el ID: ${storyId}`;
+        searchFeedback.style.display = 'block';
+
+         // Ocultar el mensaje
+      setTimeout(() => {
+        searchFeedback.style.display = 'none';
+      }, 2500);
+
         return;
       }
   
@@ -173,6 +182,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   
+  // Función para restablecer el contenido y el estilo del elemento search-feedback
+const resetSearchFeedback = () => {
+  const searchFeedback = document.getElementById('search-feedback');
+  searchFeedback.textContent = '';
+  searchFeedback.style.display = 'none';
+};
   const findSectionsByIds = (categoriaData, ids) => {
     const sections = [];
   
