@@ -20,6 +20,12 @@
   h2, #success-message{
    text-align: center;
   }
+  #success-message{
+    color: rgb(12, 168, 12);
+  }
+  #search-feedback{
+    color: #d82109;
+  }
   .story-container {
     max-width: 800px;
     margin: 0 auto;

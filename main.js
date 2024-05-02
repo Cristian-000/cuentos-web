@@ -247,7 +247,7 @@ const findRandomSectionOfSameCategoryAndType = (categoria, tipo) => {
       if (!sections || sections.length === 0) {
         // Mostrar un mensaje en el elemento search-feedback si no se encuentran resultados
         const searchFeedback = document.getElementById('search-feedback');
-        searchFeedback.textContent = `No se encontraron secciones con el ID: ${storyId}`;
+        searchFeedback.textContent = `No hay coincidencias en ID: ${storyId}`;
         searchFeedback.style.display = 'block';
 
          // Ocultar el mensaje
