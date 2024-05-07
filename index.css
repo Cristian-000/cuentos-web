@@ -15,19 +15,25 @@
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f9fdff;
+    
   
   }
   
   h1 {
+   
     text-align: center;
     margin-top: 50px;
     color: var(--secondary-color);
   }
   
   p {
+    padding-left: 10%;
+    padding-right: 10%;
     text-align: center;
     color: #666;
   }
+  p a{color: #0f7fc0;}
   /*
   .category-list {
     list-style-type: none;
@@ -117,12 +123,35 @@
 
 .quote {
   font-style: italic; /* Cambia el estilo de la fuente a cursiva */
-  background-color: #f9f9f9; /* Cambia el color de fondo */
-  border-left: 4px solid #ccc; /* Añade una línea a la izquierda para simular un bloque de cita */
+  background-color: #e3f7ff; /* Cambia el color de fondo */
+  border-left: 5px solid #ccc; /* Añade una línea a la izquierda para simular un bloque de cita */
   padding: 10px; /* Añade espacio alrededor del texto */
   margin: 20px auto; /* Ajusta el margen para separar la cita de otros elementos y centra horizontalmente */
   text-align: center; /* Centra el texto horizontalmente */
-  max-width: 60%; /* Ancho máximo del fondo de la cita */
+  max-width: 55%; /* Ancho máximo del fondo de la cita */
   font-size: 1.5rem;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
+
+
+h1 {
+  font-size: 32px; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Alineación centrada */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+#nombre-pag {
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--primary-color); /* Color azul */
+  /* Puedes agregar más estilos según sea necesario */
+}
+#nombre-pag2 {
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--secondary-color); /* Color azul */
+  /* Puedes agregar más estilos según sea necesario */
+}
+
