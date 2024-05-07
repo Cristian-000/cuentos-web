@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
 </head>
+
 <body>
     <nav class="navbar">
         <ul class="nav-list">
             <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="about.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
             <li class="dropdown">
                 <a href="#" class="dropbtn">Categorías</a>
                 <div class="dropdown-content">
@@ -27,16 +30,40 @@
         </ul>
     </nav>
     <h1>Bienvenido a Cuentos Web</h1>
-    <p>Seleccione una categoría para cargar un cuento aleatorio:</p>
-    <ul class="category-list">
-        <li><a href="story.html?categoria=Aventura">Aventura</a></li>
-        <li><a href="story.html?categoria=Fantasía">Fantasía</a></li>
-        <li><a href="story.html?categoria=Terror">Terror</a></li>
-        <li><a href="story.html?categoria=Romántico">Romántico</a></li>
-        <li><a href="story.html?categoria=Ciencia Ficción">Ciencia Ficción</a></li>
-        
-        <li><a href="index.html">Aleatorio</a></li>
-        <!-- Agrega más categorías según sea necesario -->
-    </ul>
+    <div class="container-img">
+    <img src="/img/CUENTOS-WEB.png" alt="imagen de cuentos-web">
+    
+    </div>
+    <p class="quote">"Seré una historia tan única como vos"</p>
+
+    <div class="container-redes">
+        <a href="https://www.facebook.com">
+            <img src="/img/fb.png" alt="facebook">
+        </a>
+        <a href="https://www.instagram.com">
+            <img src="/img/insta.png" alt="instagram">
+        </a>
+        <a href="https://www.gmail.com">
+            <img src="/img/gmail.png" alt="gmail">
+        </a>
+    </div>
+    <div id="contactanos-div">
+        <p>Eres escritor, artista o aficionado por la escritura y deseas compartir tus míticos textos con nosotros no lo dudes y <a href="contacto.html"><strong>contactanos!</strong></a></p>
+    </div>
+    <div id="container-selector-cats">
+        <p>Seleccione una categoría y comienza la aventura de generar cuentos únicos:</p>
+        <select class="category-list" onchange="window.location.href=this.value">
+            <option value="story.html?categoria=Aventura">Aventura</option>
+            <option value="story.html?categoria=Fantasía">Fantasía</option>
+            <option value="story.html?categoria=Terror">Terror</option>
+            <option value="story.html?categoria=Romántico">Romántico</option>
+            <option value="story.html?categoria=Ciencia Ficción">Ciencia Ficción</option>
+            <option value="index.html">Aleatorio</option>
+            <!-- Agrega más categorías según sea necesario -->
+        </select>
+    </div>
+    
+    
 </body>
+
 </html>

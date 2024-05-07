@@ -2,9 +2,9 @@
     --primary-color: #0f7fc0;
     --secondary-color: #242424;
     --link-color: #242424;
-    --link-hover-color: #423e3e00;
+    --link-hover-color: #ff000000;
     --dropdown-bg-color: #f56e20;
-    --dropdown-link-color: rgb(53, 53, 53);
+    --dropdown-link-color: rgb(197, 20, 20);
     --dropdown-link-hover-color: #f1f1f1;
   }
   
@@ -15,6 +15,7 @@
     line-height: 1.6;
     margin: 0;
     padding: 0;
+  
   }
   
   h1 {
@@ -27,23 +28,23 @@
     text-align: center;
     color: #666;
   }
-  
+  /*
   .category-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajuste en la distribución de columnas */
-    gap: 20px; /* Espacio entre elementos */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 20px; 
     text-align: center;
 }
 
 .category-list li {
-    margin-top: 10px; /* Reducción del espacio entre elementos */
+    margin-top: 10px; 
 }
 
 .category-list li a {
-    min-width: 120px; /* Reducción del ancho mínimo */
+    min-width: 120px; 
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
@@ -55,4 +56,73 @@
 
 .category-list li a:hover {
     background-color: var(--dropdown-bg-color);
+}
+*/ 
+.container-img {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.container-img img {
+  max-width: 60%;
+  height: auto;
+  display: inline-block;
+}
+
+.container-redes img {
+  max-width: 30%;
+  max-height: 150px;
+  display: inline-block;
+ 
+}
+.container-redes {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.container-redes a {
+  display: inline-block;
+ 
+}
+
+
+#container-selector-cats {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.category-list {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  display: inline-block; /* Para que se ajuste al contenido */
+  margin: 0 auto; /* Para centrarlo horizontalmente */
+  margin-bottom: 60px;
+}
+
+.category-list:focus {
+  outline: none; /* Elimina el borde al hacer foco */
+}
+
+.category-list option {
+  padding: 5px;
+}
+
+.category-list option:hover {
+  background-color: #e0e0e0;
+}
+
+.quote {
+  font-style: italic; /* Cambia el estilo de la fuente a cursiva */
+  background-color: #f9f9f9; /* Cambia el color de fondo */
+  border-left: 4px solid #ccc; /* Añade una línea a la izquierda para simular un bloque de cita */
+  padding: 10px; /* Añade espacio alrededor del texto */
+  margin: 20px auto; /* Ajusta el margen para separar la cita de otros elementos y centra horizontalmente */
+  text-align: center; /* Centra el texto horizontalmente */
+  max-width: 60%; /* Ancho máximo del fondo de la cita */
+  font-size: 1.5rem;
+  margin-bottom: 60px;
 }

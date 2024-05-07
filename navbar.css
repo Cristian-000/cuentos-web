@@ -1,78 +1,65 @@
+
 .navbar {
-    background-color: var(--primary-color);
-    position: sticky;
-    top: 0;
-    border-bottom: 1px solid var(--secondary-color); /* Agregado */
-  }
-  
-  .nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-   
-  }
-  
- 
-  .nav-list li {
-    display: inline-block;
-    position: relative;
-    margin-right: 5px; /* Reducir el margen entre elementos */
-    padding-right: 5px; /* Opcional: ajusta el espacio interno según sea necesario */
-    border-right: 1px solid var(--secondary-color);
-    font-size: 14px; /* Reducir el tamaño de fuente */
-  }
-  
-  .nav-list li a {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: var(--link-color);
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .nav-list li a:hover {
-    background-color: var(--link-hover-color);
-  }
-  
- 
+  background-color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--secondary-color); /* Agregado */
+}
 
-  .dropdown {
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list li {
+  margin: 0 10px; /* Espacio entre elementos */
+}
+
+.nav-list li:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: rgb(0, 0, 0);
+}
+
+/* Estilo para el dropdown */
+
+.dropdown {
   position: relative;
-  display: inline-block;
-
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f56e20de;
-  z-index: 3;
+  background-color: #ffffff; /* Cambia el color de fondo del dropdown */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
   top: 100%;
   left: 0;
-  border-radius: 5px;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-.nav-list .dropdown-content a {
+.dropdown-content a {
   color: var(--dropdown-link-color);
+  padding: 12px 16px;
   display: block;
   text-decoration: none;
-  font-weight: bold;
-  border-bottom: 1px solid var(--secondary-color); /* Agregado */
-
 }
-
 
 .dropdown-content a:hover {
   background-color: var(--dropdown-link-hover-color);
-}
-.nav-list li:last-child {
-  margin-right: 0px; 
-  padding-right: 0px;
-  border-right: none; /* Elimina el borde derecho del último elemento para evitar una separación adicional */
 }

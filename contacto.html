@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="contacto.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="about.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categorías</a>
+                <div class="dropdown-content">
+                    <a href="story.html?categoria=Aventura">Aventura</a>
+                    <a href="story.html?categoria=Fantasía">Fantasía</a>
+                    <a href="story.html?categoria=Terror">Terror</a>
+                    <a href="story.html?categoria=Romántico">Romántico</a>
+                    <a href="story.html?categoria=Ciencia Ficción">Ciencia Ficción</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <h1>Formulario de Contacto</h1>
+    <form id="contactoForm">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="profesion">Profesión:</label>
+            <input type="text" id="profesion" name="profesion" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <p>Elija una opción:</p>
+            <input type="radio" id="compartir" name="opcion" value="compartir">
+            <label for="compartir">Compartir textos</label><br>
+            <input type="radio" id="contacto" name="opcion" value="contacto">
+            <label for="contacto">Contacto simple</label><br>
+        </div>
+        
+        <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        </div>
+        <div class="form-group" id="modal-compartir" style="display: none;">
+            <input type="checkbox" id="acepto-terminos" required>
+            <label for="acepto-terminos">Acepto los términos y condiciones para compartir mis textos públicamente.</label>
+        </div>
+        <button type="button" onclick="enviarCorreo()">Enviar correo</button>
+        <p id="mensaje-enviado" style="display: none; color: green;">Mensaje enviado</p>
+    </form>
+
+    <!-- Modal para mostrar la licencia -->
+    <div id="modal-licencia" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Al aceptar los términos y condiciones, usted está de acuerdo en que su mensaje y otros datos proporcionados en este formulario serán utilizados y compartidos públicamente.</p>
+        </div>
+    </div>
+
+    <script>
+        function enviarCorreo() {
+            var nombre = document.getElementById("nombre").value;
+            var apellido = document.getElementById("apellido").value;
+            var profesion = document.getElementById("profesion").value;
+            var email = document.getElementById("email").value;
+            var opcion = document.querySelector('input[name="opcion"]:checked');
+            var mensaje = document.getElementById("mensaje").value;
+
+            // Verificar si todos los campos obligatorios están llenos
+            if (nombre.trim() === '' || apellido.trim() === '' || profesion.trim() === '' || email.trim() === '' || !opcion || mensaje.trim() === '') {
+                alert("Por favor, complete todos los campos obligatorios.");
+                return;
+            }
+
+            if (opcion.value === "compartir" && !document.getElementById("acepto-terminos").checked) {
+                // Si la opción es "Compartir textos" pero no se aceptaron los términos, mostrar modal
+                var modal = document.getElementById('modal-licencia');
+                modal.style.display = 'block';
+                return; // No continuar con el envío del correo
+            }
+
+            var subject = "Formulario de contacto";
+            var body = "Nombre: " + nombre + "\n";
+            body += "Apellido: " + apellido + "\n";
+            body += "Profesión: " + profesion + "\n";
+            body += "Email: " + email + "\n";
+            body += "Opción: " + (opcion ? opcion.value : '') + "\n";
+            body += "Mensaje: " + mensaje;
+
+            var mailtoLink = "mailto:correo@ejemplo.com";
+            mailtoLink += "?subject=" + encodeURIComponent(subject);
+            mailtoLink += "&body=" + encodeURIComponent(body);
+
+            window.location.href = mailtoLink;
+
+            // Mostrar el mensaje de enviado
+            document.getElementById("mensaje-enviado").style.display = "block";
+        }
+
+        // Mostrar el modal cuando se selecciona la opción "Compartir textos"
+        document.getElementById('compartir').addEventListener('change', function() {
+            var modal = document.getElementById('modal-compartir');
+            if (this.checked) {
+                modal.style.display = 'block';
+            } else {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Mostrar el modal de la licencia al hacer clic en el checkbox de aceptación de términos
+        document.getElementById('acepto-terminos').addEventListener('change', function() {
+            var modal = document.getElementById('modal-licencia');
+            if (this.checked) {
+                modal.style.display = 'block';
+            } else {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Cerrar el modal cuando se hace clic en la "X"
+        var closeBtns = document.getElementsByClassName('close');
+        for (var i = 0; i < closeBtns.length; i++) {
+            closeBtns[i].addEventListener('click', function() {
+                var modal = this.parentElement.parentElement;
+                modal.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
