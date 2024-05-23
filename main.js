@@ -1,3 +1,16 @@
+/*
+Este script, ejecutado al cargarse completamente la página,
+gestiona la interacción con un conjunto de cuentos almacenados en un archivo JSON.
+La funcionalidad principal incluye la carga de datos de cuentos,
+la selección de una categoría al azar o basada en la URL,
+y la visualización de secciones aleatorias de los cuentos en el contenedor designado.
+El script permite a los usuarios recargar secciones específicas y
+generar un identificador único para el cuento visualizado.
+También ofrece una barra de búsqueda para cargar cuentos específicos por su ID y una 
+función de compartir que recopila el contenido del cuento y el ID para compartirlo usando la 
+API de compartir del navegador. Se emplean botones para navegar hacia atrás, recargar el cuento y compartirlo, 
+así como para cambiar secciones individualmente mediante eventos de clic que invocan funciones específicas.
+*/
 document.addEventListener("DOMContentLoaded", () => {
   const storyContainer = document.getElementById("story-container");
   const categoryHeading = document.getElementById("category-heading");
