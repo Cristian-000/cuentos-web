@@ -147,3 +147,11 @@ h2, #success-message {
 .change-section-button:hover {
   background-color: var(--dropdown-bg-color);
 }
+#story-container {
+  /* Otros estilos para el contenedor de historias */
+  width: 100%; /* Ajustar el ancho al contenedor padre */
+  height: 100vh; /* Ajustar la altura al 100% del viewport */
+  background-size: cover; /* Ajustar el tamaño de la imagen de fondo para cubrir todo el contenedor */
+  background-position: center; /* Centrar la imagen de fondo */
+  background-repeat: no-repeat; /* No repetir la imagen de fondo */
+}

@@ -344,3 +344,37 @@ const shareStory = () => {
 const shareButton = document.getElementById("share-button");
 shareButton.addEventListener("click", shareStory);
 });
+
+/*
+const setBackgroundImage = (category) => {
+    const categoryFolder = category.toLowerCase().replace(/ /g, '_');
+    const imagesPath = `img/${categoryFolder}/`;
+
+    fetch(imagesPath)
+        .then(response => response.text())
+        .then(text => {
+            // Parsear el HTML de la carpeta de imágenes
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(text, 'text/html');
+            const imageLinks = Array.from(htmlDoc.querySelectorAll('a')).map(link => link.getAttribute('href'));
+            
+            // Filtrar solo los archivos de imagen
+            const imageFiles = imageLinks.filter(link => /\.(jpg|jpeg|png|gif)$/i.test(link));
+
+            if (imageFiles.length > 0) {
+                // Seleccionar una imagen aleatoria
+                const randomImage = imageFiles[Math.floor(Math.random() * imageFiles.length)];
+                const imageURL = `${imagesPath}${randomImage}`;
+
+                // Establecer la imagen como fondo del contenedor de historias
+                storyContainer.style.backgroundImage = `url('${imageURL}')`;
+            }
+        })
+        .catch(error => {
+            console.error('Error al cargar las imágenes:', error);
+        });
+};
+
+// Llamar a la función para establecer la imagen de fondo
+setBackgroundImage(currentCategory);
+*/
