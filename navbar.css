@@ -1,70 +1,70 @@
 
+
+:root {
+  --primary-color: #0f7fc0;
+  --secondary-color: #242424;
+  --link-color: #242424;
+  --link-hover-color: #ff000000;
+  --dropdown-bg-color: #f56e20;
+  --dropdown-link-color: rgb(197, 20, 20);
+  --dropdown-link-hover-color: #f1f1f1;
+}
+/*   <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="about.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Categorías</a>
+                <div class="dropdown-content">
+                    <a href="story.html?categoria=Aventura">Aventura</a>
+                    <a href="story.html?categoria=Fantasía">Fantasía</a>
+                    <a href="story.html?categoria=Terror">Terror</a>
+                    <a href="story.html?categoria=Romántico">Romántico</a>
+                    <a href="story.html?categoria=Ciencia Ficción">Ciencia Ficción</a>
+                </div>
+            </li>
+        </ul>
+    </nav>*/
+    /* Estilos personalizados de la navbar */
 .navbar {
   background-color: var(--primary-color);
-  position: sticky;
-  top: 0;
-  border-bottom: 1px solid var(--secondary-color); /* Agregado */
+  border-bottom: 1px solid var(--secondary-color);
+  margin-bottom: 12px;
 }
 
-.nav-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.nav-list li {
- 
-  margin: 0 10px; /* Espacio entre elementos */
-}
-
-.nav-list li:last-child {
-  margin-right: 0; /* Elimina el margen derecho del último elemento */
-}
-
-.nav-list li a {
-
-  text-decoration: none;
+.navbar-nav .nav-link {
   color: var(--link-color);
   font-size: 1.1rem;
   font-weight: 300;
   transition: color 0.3s ease;
-  
 }
 
-.nav-list li a:hover {
+.navbar-nav .nav-link:hover {
   color: rgb(0, 0, 0);
 }
 
-/* Estilo para el dropdown */
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffffff; /* Cambia el color de fondo del dropdown */
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.dropdown-menu {
+  background-color: #ffffff;
   border-radius: 5px;
-  top: 100%;
-  left: 0;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown-content a {
+.dropdown-menu .dropdown-item {
   color: var(--dropdown-link-color);
-  padding: 12px 16px;
-  display: block;
-  text-decoration: none;
 }
 
-.dropdown-content a:hover {
+.dropdown-menu .dropdown-item:hover {
   background-color: var(--dropdown-link-hover-color);
+}
+.navbar #nombre-pag-nav{
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--primary-color); /* Color azul */
+  /* Puedes agregar más estilos según sea necesario */
+}
+.navbar #nombre-pag2-nav {
+  font-size: 2rem;
+  font-style: italic;
+  color: var(--secondary-color); /* Color azul */
+  /* Puedes agregar más estilos según sea necesario */
 }

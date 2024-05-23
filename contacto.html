@@ -4,70 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="contacto.css">
-    
-      <!-- Metadatos de Open Graph -->
-      <meta property="og:title" content="InfiniTales">
-      <meta property="og:description" content="Generación de cuentos al azar">
-      <meta property="og:image" content="img/CUENTOS-WEB.png">
-      <meta property="og:url" content="https://cristian-000.github.io/cuentos-web/">
-      <!-- Fin de los metadatos de Open Graph -->
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <!-- Metadatos de Open Graph -->
+    <meta property="og:title" content="InfiniTales">
+    <meta property="og:description" content="Generación de cuentos al azar">
+    <meta property="og:image" content="img/CUENTOS-WEB.png">
+    <meta property="og:url" content="https://cristian-000.github.io/cuentos-web/">
+    <!-- Fin de los metadatos de Open Graph -->
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="about.html">Sobre nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Categorías</a>
-                <div class="dropdown-content">
-                    <a href="story.html?categoria=Aventura">Aventura</a>
-                    <a href="story.html?categoria=Fantasía">Fantasía</a>
-                    <a href="story.html?categoria=Terror">Terror</a>
-                    <a href="story.html?categoria=Romántico">Romántico</a>
-                    <a href="story.html?categoria=Ciencia Ficción">Ciencia Ficción</a>
-                </div>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><span id="nombre-pag-nav">Infini<span id="nombre-pag2-nav">Tales</span></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorías
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="story.html?categoria=Aventura">Aventura</a></li>
+                            <li><a class="dropdown-item" href="story.html?categoria=Fantasía">Fantasía</a></li>
+                            <li><a class="dropdown-item" href="story.html?categoria=Terror">Terror</a></li>
+                            <li><a class="dropdown-item" href="story.html?categoria=Romántico">Romántico</a></li>
+                            <li><a class="dropdown-item" href="story.html?categoria=Ciencia Ficción">Ciencia Ficción</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
     <h1>Formulario de Contacto</h1>
     <form id="contactoForm">
-        <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
         </div>
-        <div class="form-group">
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" required>
+        <div class="mb-3">
+            <label for="apellido" class="form-label">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" class="form-control" required>
         </div>
-        <div class="form-group">
-            <label for="profesion">Profesión:</label>
-            <input type="text" id="profesion" name="profesion" required>
+        <div class="mb-3">
+            <label for="profesion" class="form-label">Profesión:</label>
+            <input type="text" id="profesion" name="profesion" class="form-control" required>
         </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
         </div>
-        <div class="form-group">
+        <div class="mb-3">
             <p>Elija una opción:</p>
-            <input type="radio" id="compartir" name="opcion" value="compartir">
-            <label for="compartir">Compartir textos</label><br>
-            <input type="radio" id="contacto" name="opcion" value="contacto">
-            <label for="contacto">Contacto simple</label><br>
+            <div class="form-check">
+                <input type="radio" id="compartir" name="opcion" value="compartir" class="form-check-input">
+                <label for="compartir" class="form-check-label">Compartir textos</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="contacto" name="opcion" value="contacto" class="form-check-input">
+                <label for="contacto" class="form-check-label">Contacto simple</label>
+            </div>
         </div>
-        
-        <div class="form-group">
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" class="form-control" required></textarea>
         </div>
-        <div class="form-group" id="modal-compartir" style="display: none;">
-            <input type="checkbox" id="acepto-terminos" required>
-            <label for="acepto-terminos">Acepto los términos y condiciones para compartir mis textos públicamente.</label>
+        <div class="mb-3" id="modal-compartir" style="display: none;">
+            <div class="form-check">
+                <input type="checkbox" id="acepto-terminos" class="form-check-input" required>
+                <label for="acepto-terminos" class="form-check-label">Acepto los términos y condiciones para compartir mis textos públicamente.</label>
+            </div>
         </div>
-        <button type="button" onclick="enviarCorreo()">Enviar correo</button>
+        <button type="button" class="btn btn-primary w-100 btn-enviar" onclick="enviarCorreo()">Enviar correo</button>
+
         <p id="mensaje-enviado" style="display: none; color: green;">Mensaje enviado</p>
     </form>
 
@@ -78,7 +101,23 @@
             <p>Al aceptar los términos y condiciones, usted está de acuerdo en que su mensaje y otros datos proporcionados en este formulario serán utilizados y compartidos públicamente.</p>
         </div>
     </div>
-
+ <!-- Footer -->
+ <footer class="footer">
+    <div class="container">
+      <p>Creado por Cristian Fernandez, desarrollador WEB</p>
+      <p>
+        <a href="https://www.linkedin.com/in/cristian-fernández-595329283" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        |
+        <a href="mailto:cuentaemresarial480@gmail.com">
+          <i class="fas fa-envelope"></i> Gmail
+        </a>
+      </p>
+    </div>
+  </footer>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
         function enviarCorreo() {
             var nombre = document.getElementById("nombre").value;
@@ -88,17 +127,15 @@
             var opcion = document.querySelector('input[name="opcion"]:checked');
             var mensaje = document.getElementById("mensaje").value;
 
-            // Verificar si todos los campos obligatorios están llenos
             if (nombre.trim() === '' || apellido.trim() === '' || profesion.trim() === '' || email.trim() === '' || !opcion || mensaje.trim() === '') {
                 alert("Por favor, complete todos los campos obligatorios.");
                 return;
             }
 
             if (opcion.value === "compartir" && !document.getElementById("acepto-terminos").checked) {
-                // Si la opción es "Compartir textos" pero no se aceptaron los términos, mostrar modal
                 var modal = document.getElementById('modal-licencia');
                 modal.style.display = 'block';
-                return; // No continuar con el envío del correo
+                return;
             }
 
             var subject = "Formulario de contacto";
@@ -114,12 +151,9 @@
             mailtoLink += "&body=" + encodeURIComponent(body);
 
             window.location.href = mailtoLink;
-
-            // Mostrar el mensaje de enviado
             document.getElementById("mensaje-enviado").style.display = "block";
         }
 
-        // Mostrar el modal cuando se selecciona la opción "Compartir textos"
         document.getElementById('compartir').addEventListener('change', function() {
             var modal = document.getElementById('modal-compartir');
             if (this.checked) {
@@ -129,7 +163,6 @@
             }
         });
 
-        // Mostrar el modal de la licencia al hacer clic en el checkbox de aceptación de términos
         document.getElementById('acepto-terminos').addEventListener('change', function() {
             var modal = document.getElementById('modal-licencia');
             if (this.checked) {
@@ -139,7 +172,6 @@
             }
         });
 
-        // Cerrar el modal cuando se hace clic en la "X"
         var closeBtns = document.getElementsByClassName('close');
         for (var i = 0; i < closeBtns.length; i++) {
             closeBtns[i].addEventListener('click', function() {
@@ -148,5 +180,9 @@
             });
         }
     </script>
+
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

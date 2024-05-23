@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nosotros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     
       <!-- Metadatos de Open Graph -->
@@ -16,27 +18,63 @@
       <!-- Fin de los metadatos de Open Graph -->
 </head>
 <body>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="about.html">Sobre nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Categorías</a>
-                <div class="dropdown-content">
-                    <a href="story.html?categoria=Aventura">Aventura</a>
-                    <a href="story.html?categoria=Fantasía">Fantasía</a>
-                    <a href="story.html?categoria=Terror">Terror</a>
-                    <a href="story.html?categoria=Romántico">Romántico</a>
-                    <a href="story.html?categoria=Ciencia Ficción">Ciencia Ficción</a>                  
-                </div>
-            </li>
-        </ul>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><span id="nombre-pag-nav">Infini<span id="nombre-pag2-nav">Tales</span></span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorías
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="story.html?categoria=Aventura">Aventura</a></li>
+                  <li><a class="dropdown-item" href="story.html?categoria=Fantasía">Fantasía</a></li>
+                  <li><a class="dropdown-item" href="story.html?categoria=Terror">Terror</a></li>
+                  <li><a class="dropdown-item" href="story.html?categoria=Romántico">Romántico</a></li>
+                  <li><a class="dropdown-item" href="story.html?categoria=Ciencia Ficción">Ciencia Ficción</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     <p>Sobre nosotros todavía no hay nada escrito</p>
     <p>Bombón</p>
     <p>Sin duda irá en la categoria Romanticos</p>
     <p><i class="fas fa-heart"></i></p>
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="container">
+    <p>Creado por Cristian Fernandez, desarrollador WEB</p>
+    <p>
+      <a href="https://www.linkedin.com/in/cristian-fernández-595329283" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      |
+      <a href="mailto:cuentaemresarial480@gmail.com">
+        <i class="fas fa-envelope"></i> Gmail
+      </a>
+    </p>
+  </div>
+</footer>
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <!-- JavaScript de Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
